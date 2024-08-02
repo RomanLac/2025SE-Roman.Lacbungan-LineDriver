@@ -8,16 +8,17 @@
 
 static unsigned int lineFollower = 3;
 
-lineSensr mylineSensor;
+lineSensor mylineSensor;
 ledArray myLedArray;
 servo myServo;
 
 void setup() {
-    Serial.begin(9600);
-    lineSensorObject.init()
+  Serial.begin(9600);
+  lineSensorObject.init();
 }
 
 void loop() {
-
+  int sensorValue = myLineSensor.readSensor();
+  Serial.println(sensorValue);
 }
 

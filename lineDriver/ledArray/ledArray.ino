@@ -41,6 +41,34 @@ const uint32_t arrow_down[] = {
 		66
 };
 
+const uint32_t readySymbol[] = {
+    0x0000000,
+    0x0000040,
+    0x0001800,
+    0x00fc000
+};
+
+const uint32_t tickSymbol[] = {
+    0x0000000,
+    0x0000020,
+    0x0001840,
+    0x00fc080
+};
+
+const uint32_t crossSymbol[] = {
+    0x00000c0,
+    0x0003030,
+    0x00c030c,
+    0x300c030
+};
+
+const uint32_t hourglassSymbol[] = {
+    0x0000040,
+    0x0003030,
+    0x00c0c0c,
+    0x0003030
+};
+
 ArduinoLEDMatrix matrix;
 
 void setup() {
@@ -52,7 +80,7 @@ void setup() {
    matrix.beginText(0, 1, 0xFF, 0, 0);
    matrix.print("V00.00.01");
    matrix.endText(SCROLL_LEFT);
-}
+
 
 void loop() {
   matrix.loadFrame(arrow_left);
@@ -67,4 +95,15 @@ void loop() {
   matrix.loadFrame(arrow_down);
   delay(500);
 
+  matrix.loadFrame(readySymbol);
+  delay(500);
+
+  matrix.loadFrame(tickSymbol);
+  delay(500);
+  
+  matrix.loadFrame(crossSymbol);
+  delay(500);
+
+  matrix.loadFrame(hourglassSymbol);
+  delay(500);
 }
