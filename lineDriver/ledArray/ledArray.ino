@@ -10,6 +10,7 @@
   Contact: benjmain.jones21@det.nsw.edu.au
 */
 
+#include ledArray.h
 #include "ArduinoGraphics.h"
 #include "Arduino_LED_Matrix.h"
 

@@ -20,7 +20,6 @@ public:
 private:
   int _numLEDs;
   int _dataPin;
-  // other private members as needed
 
 };
 
