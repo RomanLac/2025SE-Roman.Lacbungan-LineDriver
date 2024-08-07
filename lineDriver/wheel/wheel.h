@@ -2,25 +2,25 @@
 #define WHEEL_H
 
 #include <Servo.h>
+#include <Arduino.h>
 
 class wheel {
 public:
-    wheel(byte pin1, byte pin2);
-
+    wheel(byte pin);
+    
     void init();
+    void stop();
+    void forward();
+    void turnLeft();
+    void turnRight();
+    void backward();
 
     bool setSpeed();
-    bool stop();
-    bool forward();
-    bool backward();
-    bool turnLeft();
-    bool turnRight();
 
 private:
-    Servo _servo1;
-    Servo _servo2;
-    byte _pin1;
-    byte _pin2;
+    Servo servo1;
+    byte _pin;
+
 };
 
 #endif // WHEEL_H

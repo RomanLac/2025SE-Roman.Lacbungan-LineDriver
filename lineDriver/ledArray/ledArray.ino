@@ -10,67 +10,7 @@
   Contact: benjmain.jones21@det.nsw.edu.au
 */
 
-#include ledArray.h
-#include "ArduinoGraphics.h"
-#include "Arduino_LED_Matrix.h"
-
-const uint32_t arrow_left[] = {
-		0x400c01c,
-		0x3fc3fc1,
-		0xcc0cc04c,
-		66
-};
-
-const uint32_t arrow_right[] = {
-		0x2003003,
-		0x83fc3fc3,
-		0x38330320,
-		66
-};
-
-const uint32_t arrow_up[] = {
-		0x600f01f,
-		0x83fc0600,
-		0x60060060,
-		66
-};
-
-const uint32_t arrow_down[] = {
-		0x6006006,
-		0x603fc1,
-		0xf80f0060,
-		66
-};
-
-const uint32_t readySymbol[] = {
-    0x0000000,
-    0x0000040,
-    0x0001800,
-    0x00fc000
-};
-
-const uint32_t tickSymbol[] = {
-    0x0000000,
-    0x0000020,
-    0x0001840,
-    0x00fc080
-};
-
-const uint32_t crossSymbol[] = {
-    0x00000c0,
-    0x0003030,
-    0x00c030c,
-    0x300c030
-};
-
-const uint32_t hourglassSymbol[] = {
-    0x0000040,
-    0x0003030,
-    0x00c0c0c,
-    0x0003030
-};
-
-ArduinoLEDMatrix matrix;
+#include "ledArray.h"
 
 void setup() {
   Serial.begin(9600);
@@ -81,21 +21,12 @@ void setup() {
    matrix.beginText(0, 1, 0xFF, 0, 0);
    matrix.print("V00.00.01");
    matrix.endText(SCROLL_LEFT);
+   ledArray.readySymbol();
 
+}
 
+/*
 void loop() {
-  matrix.loadFrame(arrow_left);
-  delay(500);
-
-  matrix.loadFrame(arrow_right);
-  delay(500);
-  
-  matrix.loadFrame(arrow_up);
-  delay(500);
-
-  matrix.loadFrame(arrow_down);
-  delay(500);
-
   matrix.loadFrame(readySymbol);
   delay(500);
 
@@ -105,6 +36,8 @@ void loop() {
   matrix.loadFrame(crossSymbol);
   delay(500);
 
-  matrix.loadFrame(hourglassSymbol);
+  matrix.loadFrame(progressSymbol);
   delay(500);
+
 }
+*/

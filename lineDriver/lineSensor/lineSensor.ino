@@ -2,15 +2,14 @@
 
 #include "lineSensor.h"
 
-lineSensor lineSensorObject(sensorPin);
+lineSensor lineSensorObject(7);
 
-// int sensorPin = 7;  // line detection sensor interface
-// int val;            // variable to store sensor reading
+int sensorPin = 7;  // line detection sensor interface
+int val;            // variable to store sensor reading
 
 void setup() {
   // pinMode(sensorPin,INPUT);  // define sensor as input 
-  lineSensorObject.init() // initialize the sensor
-  Serial.begin(9600);     // initialize serial communication with PC
+  lineSensorObject.init(); // initialize the sensor
 }
 
 void loop() {

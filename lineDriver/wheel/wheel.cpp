@@ -1,44 +1,49 @@
-#include <Servo.h>
-#include wheel.h
+#include "wheel.h"
+
+// may change it so both wheels are controlled for less lines in main
 
 // constructor
-Servo::Servo(byte pin1, byte pin2) {
-    _pin = pin1;
-    _pin = pin2;
+wheel::wheel(byte pin) {
+    Serial.begin(9600);
+    _pin = pin;
+    servo1.attach(_pin);
 }
 
 // initialize the sensor
-void Servo::init() {
-    pinMode(_pin1, INPUT);
-    pinMode(_pin2 INPUT);
+void wheel::init() {
+// no init needed
 }
 
-// private method: if a line is detected
-bool Servo::setSpeed() {
-  return flase
-}
-
-bool Servo::stop() {
+void wheel::stop() {
+  Serial.println("back");
   servo1.writeMicroseconds(0);
-  servo2.writeMicroseconds(0);
+//  servo2.writeMicroseconds(0);
 }
 
-bool Servo::forward() {
+void wheel::forward() {
+  Serial.println("forward");
+  servo1.writeMicroseconds(1500);
+//  servo2.writeMicroseconds(1500);
+}
+
+void wheel::backward() {
+  Serial.println("backwards");
   servo1.writeMicroseconds(700);
-  servo2.writeMicroseconds(700);
+//  servo2.writeMicroseconds(700);
 }
 
-// do later
-bool Servo::backward() {
-  return false
+void wheel::turnLeft() {
+  Serial.println("left");
+  servo1.writeMicroseconds(1500);
+//  servo2.writeMicroseconds(0);
 }
 
-bool Servo::turnLeft() {
-  servo1.writeMicroseconds(700);
-  servo2.writeMicroseconds(0);
-}
-
-bool Servo::turnright() {
+void wheel::turnRight() {
+  Serial.println("right");
   servo1.writeMicroseconds(0);
-  servo2.writeMicroseconds(700);
+//  servo2.writeMicroseconds(1500);
+}
+
+bool wheel::setSpeed() {
+  return true;
 }

@@ -2,6 +2,7 @@
 
 // constructor
 lineSensor::lineSensor(byte pin) {
+    Serial.begin(9600);
     _pin = pin;
 }
 
@@ -10,7 +11,7 @@ void lineSensor::init() {
     pinMode(_pin, INPUT);
 }
 
-// private method: if a line is detected
+// public methods
 bool lineSensor::isLineDetected() {
     const int threshold = 500;
     return digitalRead(_pin) == HIGH;

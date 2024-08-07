@@ -1,25 +1,30 @@
 #ifndef LEDARRAY_H
 #define LEDARRAY_H
 
+#include "ArduinoGraphics.h"
+#include "Arduino_LED_Matrix.h"
+#include <Arduino.h>
+
+ArduinoLEDMatrix matrix;
+
 class ledArray {
 public:
-  // constructor (example)
-  ledArray(int numLEDs, int dataPin);
+  // constructor
+  ledArray();
+
+  void init();
 
   // public methods
   void begin();
-  void setLed(int ledIndex, bool state);
   void clear();
   void show();
 
-  bool ready();
-  bool tick();
-  bool cross();
-  bool progress();
+  void readySymbol();
+  void tickSymbol();
+  void crossSymbol();
+  void progressSymbol();
 
 private:
-  int _numLEDs;
-  int _dataPin;
 
 };
 

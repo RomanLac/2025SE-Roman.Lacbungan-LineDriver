@@ -2,23 +2,26 @@
 
 #include "ledArray/ledArray.h"
 #include "lineSensor/lineSensor.h"
-#include "Servo/Servo.h"
-#include "ArduinoGraphics.h"
-#include "Arduino_LED_Matrix.h"
+#include "wheel/wheel.h"
+  
+lineSensor lineSensorObject(sensorPin);
 
-static unsigned int lineFollower = 3;
-
-lineSensor mylineSensor;
-ledArray myLedArray;
-servo myServo;
+wheel leftWheel(5);
+wheel leftWheel(7);
 
 void setup() {
   Serial.begin(9600);
-  lineSensorObject.init();
+  matrix.begin(); // deploys ready animation
+    matrix.loadFrame(readySymbol);
+    delay(500);
+
+  lineSensorObject.init(); //line starts
+
 }
 
 void loop() {
-  int sensorValue = myLineSensor.readSensor();
+  int sensorValue = lineSensor.readSensor();
   Serial.println(sensorValue);
+
 }
 
