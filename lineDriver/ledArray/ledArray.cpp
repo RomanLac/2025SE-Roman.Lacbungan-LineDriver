@@ -1,61 +1,57 @@
 #include "ledArray.h"
 
-const uint32_t readySymbol[4] = {
-  0x0000000,
-  0x0000040,
-  0x0001800,
-  0x00fc000
+const uint32_t readySymbolData[4] = {
+	0x0,
+	0x420845,
+	0x28210000,
+	66
 };
 
-const uint32_t tickSymbol[4] = {
-  0x0000000,
-  0x0000020,
-  0x0001840,
-  0x00fc080
+const uint32_t tickSymbolData[4] = {
+	0x0,
+	0x100201,
+	0x40080000,
+	66
 };
 
-const uint32_t crossSymbol[4] = {
-  0x00000c0,
-  0x0003030,
-  0x00c030c,
-  0x300c030
+const uint32_t crossSymbolData[4] = {
+	0x10809,
+	0x600600,
+	0x90108000,
+	66
 };
 
-const uint32_t progressSymbol[4] = {
-  0x0000040,
-  0x0003030,
-  0x00c0c0c,
-  0x0003030
+const uint32_t progressSymbolData[4] = {
+	0x30c29,
+	0x42642642,
+	0x9430c000,
+	66
 };
 
-// constructor
 ledArray::ledArray() {
   Serial.begin(9600);
+}
+
+void ledArray::init() {
   matrix.begin();
 }
 
-/* initialize the sensor
-void ledArray::init() {
-  pinMode(_pin, OUTPUT);
-}
-*/
-
 void ledArray::readySymbol() {
-  matrix.loadFrame(readySymbol);
+  matrix.loadFrame(readySymbolData);
   delay(500);
 }
 
 void ledArray::tickSymbol() {
-  matrix.loadFrame(tickSymbol);
+  matrix.loadFrame(tickSymbolData);
   delay(500);
 }
 
 void ledArray::crossSymbol() {
-  matrix.loadFrame(crossSymbol);
+  matrix.loadFrame(crossSymbolData);
   delay(500);
 }
 
 void ledArray::progressSymbol() {
-  matrix.loadFrame(progressSymbol);
+  matrix.loadFrame(progressSymbolData);
   delay(500);
 }

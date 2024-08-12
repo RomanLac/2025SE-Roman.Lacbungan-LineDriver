@@ -1,25 +1,30 @@
-// snippet taken from ky-033 line tracking module documentation
-
 #include "lineSensor.h"
 
-lineSensor lineSensorObject(7);
+const int sensorPin1 = 2;
+const int sensorPin2 = 3;
 
-int sensorPin = 7;  // line detection sensor interface
-int val;            // variable to store sensor reading
+lineSensor sensor1(sensorPin1);
+lineSensor sensor2(sensorPin2);
 
 void setup() {
-  // pinMode(sensorPin,INPUT);  // define sensor as input 
-  lineSensorObject.init(); // initialize the sensor
+    Serial.begin(9600);
+  
+    sensor1.init();
+    sensor2.init();
 }
 
 void loop() {
-  val = digitalRead(sensorPin); // read value from sensor
-  
-  if (val == HIGH) { 
-    Serial.println("Line detected"); 
-  } else { 
-    Serial.println("Line NOT detected"); 
-  }
+    if (sensor1.isLineDetected()) {
+        Serial.println("1 detected");
+    } else {
+        Serial.println("1 not detected");
+    }
 
-  delay(500);
+    if (sensor2.isLineDetected()) {
+        Serial.println("2 detected");
+    } else {
+        Serial.println("2 not detected");
+    }
+
+    delay(500);
 }

@@ -1,27 +1,31 @@
 // main
 
+// user interface
 #include "ledArray/ledArray.h"
-#include "lineSensor/lineSensor.h"
-#include "wheel/wheel.h"
-  
-lineSensor lineSensorObject(sensorPin);
+#include "ledArray/ledArray.cpp"
 
-wheel leftWheel(5);
-wheel leftWheel(7);
+ledArray myLedArray;
+
+// line sensor
+#include "lineSensor/lineSensor.h"
+#include "lineSensor/lineSensor.cpp"
+
+lineSensor myLineSensor1(1);
+lineSensor myLineSensor2(2);
+
+// servo
+#include "wheel/wheel.h"
+#include "wheel/wheel.cpp"
+
+wheel myWheel;
+
+// code starts here
 
 void setup() {
-  Serial.begin(9600);
-  matrix.begin(); // deploys ready animation
-    matrix.loadFrame(readySymbol);
-    delay(500);
-
-  lineSensorObject.init(); //line starts
-
+  myLedArray.init();
 }
 
 void loop() {
-  int sensorValue = lineSensor.readSensor();
-  Serial.println(sensorValue);
 
 }
 

@@ -6,20 +6,26 @@
 
 class wheel {
 public:
-    wheel(byte pin);
+  wheel();
     
-    void init();
-    void stop();
-    void forward();
-    void turnLeft();
-    void turnRight();
-    void backward();
+  void init();
 
-    bool setSpeed();
+  // wheel controllers
+  void forwards();
+  void backwards();
+  void stop();
+
+  //turns in place
+  void turnLeft();
+  void turnRight(); 
+
+  // set in public for config
+  bool setSpeed();
 
 private:
-    Servo servo1;
-    byte _pin;
+  // both wheels are taken into account
+  Servo servo1;
+  Servo servo2;
 
 };
 

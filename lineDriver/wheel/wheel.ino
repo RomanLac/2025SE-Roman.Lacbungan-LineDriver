@@ -1,25 +1,23 @@
-#include <Servo.h>
-#include <Arduino.h>
 #include "wheel.h"
 
-wheel leftWheel(5); // Replace with your actual pin numbers
-wheel rightWheel(7); // Replace with your actual pin numbers
+wheel wheel;
 
-static unsigned int degreeOfMovement = 180; 
+static unsigned int degreeOfMovement = 180;
 
 void setup() {
-  leftWheel.init();
-  rightWheel.init();
+  wheel.init();
 }
 
 void loop() {
-  // Move forward for 5 seconds
-  leftWheel.forward();
-  rightWheel.forward();
-  delay(500); // Move forward for 5 seconds
+  wheel.forwards();
+  delay(500);
 
-  // Stop both wheels
-  leftWheel.stop();
-  rightWheel.stop();
+  wheel.backwards();
+  delay(500);
+
+  wheel.turnLeft();
+  delay(500);
+
+  wheel.turnRight();
   delay(500);
 }

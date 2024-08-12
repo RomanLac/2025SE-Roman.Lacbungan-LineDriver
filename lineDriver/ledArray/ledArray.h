@@ -5,26 +5,20 @@
 #include "Arduino_LED_Matrix.h"
 #include <Arduino.h>
 
-ArduinoLEDMatrix matrix;
-
 class ledArray {
 public:
-  // constructor
   ledArray();
 
   void init();
 
-  // public methods
-  void begin();
-  void clear();
-  void show();
-
+  // display symbols
   void readySymbol();
   void tickSymbol();
   void crossSymbol();
   void progressSymbol();
 
 private:
+  ArduinoLEDMatrix matrix;
 
 };
 

@@ -5,16 +5,17 @@
 
 class lineSensor {
 public:
-    // constructor
-    lineSensor(byte pin);
+    lineSensor(int sensorPin);
 
     void init();
 
-    // public methods
+    // stores readings
     bool isLineDetected();
 
 private:
-    int _pin;
+  int sensorPin;
+  int val;
+
 };
 
 #endif // LINESENSOR_H
