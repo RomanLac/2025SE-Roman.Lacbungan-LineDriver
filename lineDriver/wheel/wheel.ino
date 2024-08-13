@@ -1,23 +1,24 @@
 #include "wheel.h"
 
-wheel wheel;
+wheel myWheel;
 
-static unsigned int degreeOfMovement = 180;
 
 void setup() {
-  wheel.init();
+  myWheel.init();
+  
 }
 
 void loop() {
-  wheel.forwards();
+  myWheel.forwards();
   delay(500);
 
-  wheel.backwards();
+  myWheel.backwards();
   delay(500);
 
-  wheel.turnLeft();
+  myWheel.turnLeft();
   delay(500);
 
-  wheel.turnRight();
+  myWheel.turnRight();
   delay(500);
+
 }

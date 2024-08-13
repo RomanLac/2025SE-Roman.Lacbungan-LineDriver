@@ -9,7 +9,7 @@ wheel::wheel() {
 void wheel::init() {
   Serial.println("debug");
 
-  // forward 1500 // stop 700 // backwards 2700
+  // stop 700 // forward 1500 // backwards 2700
 
   servo1.attach(5, 700, 2300);
   Serial.println("first servo");
@@ -28,8 +28,8 @@ void wheel::stop() {
 void wheel::forwards() {
   Serial.println("forward");
 
-  servo1.writeMicroseconds(2700);
-  servo2.writeMicroseconds(2700);
+  servo1.writeMicroseconds(1500);
+  servo2.writeMicroseconds(1500);
 }
 
 void wheel::backwards() {

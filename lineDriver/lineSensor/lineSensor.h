@@ -5,12 +5,12 @@
 
 class lineSensor {
 public:
-    lineSensor(int sensorPin);
+  lineSensor(int sensorPin);
 
-    void init();
+  void init();
 
-    // stores readings
-    bool isLineDetected();
+  // stores readings
+  bool isLineDetected();
 
 private:
   int sensorPin;

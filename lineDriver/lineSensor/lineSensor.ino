@@ -1,30 +1,27 @@
 #include "lineSensor.h"
 
-const int sensorPin1 = 2;
-const int sensorPin2 = 3;
-
-lineSensor sensor1(sensorPin1);
-lineSensor sensor2(sensorPin2);
+lineSensor myLineSensor1(1);
+lineSensor myLineSensor2(2);
 
 void setup() {
-    Serial.begin(9600);
-  
-    sensor1.init();
-    sensor2.init();
+  myLineSensor1.init();
+  myLineSensor2.init();
+
 }
 
 void loop() {
-    if (sensor1.isLineDetected()) {
-        Serial.println("1 detected");
-    } else {
-        Serial.println("1 not detected");
-    }
+  if (myLineSensor1.isLineDetected()) {
+    Serial.println("1 detected");
+  } else {
+    Serial.println("1 not detected");
+  }
 
-    if (sensor2.isLineDetected()) {
-        Serial.println("2 detected");
-    } else {
-        Serial.println("2 not detected");
-    }
+  if (myLineSensor2.isLineDetected()) {
+    Serial.println("2 detected");
+  } else {
+    Serial.println("2 not detected");
+  }
 
-    delay(500);
+  delay(500);
+
 }
