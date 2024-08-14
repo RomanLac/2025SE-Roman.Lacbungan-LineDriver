@@ -1,7 +1,6 @@
 #include "wheel.h"
 
-wheel myWheel;
-
+wheel myWheel(5, 7);
 
 void setup() {
   myWheel.init();
@@ -10,9 +9,6 @@ void setup() {
 
 void loop() {
   myWheel.forwards();
-  delay(500);
-
-  myWheel.backwards();
   delay(500);
 
   myWheel.turnLeft();

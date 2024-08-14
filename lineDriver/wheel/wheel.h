@@ -6,7 +6,8 @@
 
 class wheel {
 public:
-  wheel();
+  wheel() {}
+  wheel(int servoPin1, int servoPin2);
     
   void init();
 
@@ -26,6 +27,8 @@ private:
   // both wheels are taken into account
   Servo servo1;
   Servo servo2;
+  int servoPin1;
+  int servoPin2;
 
 };
 

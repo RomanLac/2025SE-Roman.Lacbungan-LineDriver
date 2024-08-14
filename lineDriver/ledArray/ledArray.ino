@@ -1,23 +1,23 @@
 #include "ledArray.h"
 
-ledArray ledArray;
+ledArray myLedArray;
 
 void setup() {
-  ledArray.init();
+  myLedArray.init();
 
 }
 
 void loop() {
-  ledArray.readySymbol();
+  myLedArray.readySymbol();
   delay(500);
 
-  ledArray.tickSymbol();
+  myLedArray.tickSymbol();
   delay(500);
 
-  ledArray.crossSymbol();
+  myLedArray.crossSymbol();
   delay(500);
 
-  ledArray.progressSymbol();
+  myLedArray.progressSymbol();
   delay(500);
   
 }

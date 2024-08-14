@@ -10,29 +10,31 @@ ledArray myLedArray;
 #include "lineSensor/lineSensor.h"
 #include "lineSensor/lineSensor.cpp"
 
-lineSensor myLineSensorLeft(1);
-lineSensor myLineSensorRight(2);
+lineSensor myLineSensorLeft(12);
+lineSensor myLineSensorRight(13);
 
 // continous servo
 #include "wheel/wheel.h"
 #include "wheel/wheel.cpp"
 
-wheel myWheel;
+wheel myWheel(9,10);
 
 // code starts here
 
 void setup() {
+  // initialize
   myLedArray.init();
   myLineSensorLeft.init();
   myLineSensorRight.init();
 
   // ready symbol
-  delay(500);
   myLedArray.readySymbol();
 
   // starts moving
   delay(500);
   myWheel.init();
+
+  // progress symbol
   myLedArray.progressSymbol();
 
 }
