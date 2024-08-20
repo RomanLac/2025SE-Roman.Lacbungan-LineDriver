@@ -16,6 +16,8 @@ public:
   void tickSymbol();
   void crossSymbol();
   void progressSymbol();
+  void leftSymbol();
+  void rightSymbol();
 
 private:
   ArduinoLEDMatrix matrix;

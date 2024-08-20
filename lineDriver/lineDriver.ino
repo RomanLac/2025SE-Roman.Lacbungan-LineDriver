@@ -10,8 +10,8 @@ ledArray myLedArray;
 #include "lineSensor/lineSensor.h"
 #include "lineSensor/lineSensor.cpp"
 
-lineSensor myLineSensorLeft(12);
-lineSensor myLineSensorRight(13);
+lineSensor myLineSensorLeft(A5); // left
+lineSensor myLineSensorRight(A1); // right
 
 // continous servo
 #include "wheel/wheel.h"
@@ -30,43 +30,34 @@ void setup() {
   // ready symbol
   myLedArray.readySymbol();
 
-  // starts moving
   delay(500);
   myWheel.init();
+  Serial.println("Wheel");
 
   // progress symbol
   myLedArray.progressSymbol();
 
 }
 
-void loop() {
-  if (myLineSensorLeft.isLineDetected()||myLineSensorRight.isLineDetected()) {
-    
-    // left
-    if (myLineSensorLeft.isLineDetected()) {
-      Serial.println("Left detected");
-      myWheel.turnLeft();
-      delay(100);
-        
-      } else {
-        Serial.println("Left not detected");
-      }
+void loop() {    
 
-    // right
-    if (myLineSensorRight.isLineDetected()) {
-      Serial.println("Right detected");
-      myWheel.turnRight();
-      delay(100);
+  // move forwards
+  if (myLineSensorLeft.isLineDetected() && myLineSensorRight.isLineDetected()) {
+    myWheel.forwards();
 
-      } else {
-        Serial.println("Right not detected");
-      }
+  // turn left
+  } else if (myLineSensorRight.isLineDetected()) {
+    myWheel.turnLeft();
 
-    // forwards else
-    } else {
-      myWheel.forwards();
-    }
-   
+  // turn right
+  } else if (myLineSensorLeft.isLineDetected()) {
+    myWheel.turnRight();
+
+  } else {
+    myWheel.stop();
+  }
+
+  delay(50);
 
 }
 

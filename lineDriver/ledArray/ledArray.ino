@@ -2,7 +2,7 @@
 
 ledArray myLedArray;
 
-void setup() {
+void setup() {  
   myLedArray.init();
 
 }
@@ -18,6 +18,12 @@ void loop() {
   delay(500);
 
   myLedArray.progressSymbol();
+  delay(500);
+  
+  myLedArray.leftSymbol();
+  delay(500);
+
+  myLedArray.rightSymbol();
   delay(500);
   
 }

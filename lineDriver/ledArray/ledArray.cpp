@@ -28,18 +28,26 @@ const uint32_t progressSymbolData[4] = {
 	66
 };
 
+const uint32_t leftSymbolData[4] = {
+	0x8018,
+	0x3fc3fc1,
+	0x80080000,
+	66
+};
+
+const uint32_t rightSymbolData[4] = {
+	0x1001,
+	0x83fc3fc0,
+	0x18010000,
+	66
+};
+
 ledArray::ledArray() {}
 
 void ledArray::init() {
   // copied from example code
   Serial.begin(9600);
    matrix.begin();
-   matrix.textFont(Font_5x7);
-   matrix.textScrollSpeed(100);
-   matrix.stroke(0xFF, 0, 0);
-   matrix.beginText(0, 1, 0xFF, 0, 0);
-   matrix.print("V00.00.01");
-   matrix.endText(SCROLL_LEFT);
 }
 
 void ledArray::readySymbol() {
@@ -59,5 +67,15 @@ void ledArray::crossSymbol() {
 
 void ledArray::progressSymbol() {
   matrix.loadFrame(progressSymbolData);
+  delay(500);
+}
+
+void ledArray::leftSymbol() {
+  matrix.loadFrame(leftSymbolData);
+  delay(500);
+}
+
+void ledArray::rightSymbol() {
+  matrix.loadFrame(rightSymbolData);
   delay(500);
 }
