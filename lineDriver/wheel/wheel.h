@@ -16,11 +16,11 @@ public:
   void moveBackwards();
   void stop();
 
-  //turns in place
+  // turns in place
   void turnLeft();
   void turnRight(); 
 
-  // set in public for config
+  // not setup yet
   bool setSpeed();
 
 private:
