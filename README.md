@@ -6,13 +6,11 @@ More features will be added along the way, including a speaker and Bluetooth con
 
 Benefits: 
 * The robot should allow ease of configuration. 
-* The robot should be secure using OOP and encapsulation. 
+* The robot should be secure using an OOP approach. 
 * The robot’s status should be displayed through a user-friendly interface. 
 
 Objectives: 
 * The robot should follow a black line. 
-* The robot should avoid any obstructions/objects. 
-* The robot should handle errors and display them to the end-user. 
 
 Goals: 
 * End-users should be able to utilise these machines with ease. 
