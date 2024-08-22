@@ -12,8 +12,8 @@ public:
   void init();
 
   // wheel controllers
-  void forwards();
-  void backwards();
+  void moveForwards();
+  void moveBackwards();
   void stop();
 
   //turns in place

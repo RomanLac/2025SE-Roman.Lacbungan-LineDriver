@@ -12,25 +12,25 @@ void wheel::init() {
   servo2.attach(servoPin2, 700, 2300);
 }
 
-void wheel::forwards() {
-  servo1.writeMicroseconds(1000);
-  servo2.writeMicroseconds(2000);
+void wheel::moveForwards() {
+  servo1.writeMicroseconds(1600);
+  servo2.writeMicroseconds(1400);
 }
 
 // unnecessary
-void wheel::backwards() {
+void wheel::moveBackwards() {
   servo1.writeMicroseconds(1500);
   servo2.writeMicroseconds(1500); 
 }
 
 void wheel::turnLeft() {
-  servo1.writeMicroseconds(1000);
+  servo1.writeMicroseconds(1600);
   servo2.writeMicroseconds(1500);
 }
 
 void wheel::turnRight() {
   servo1.writeMicroseconds(1500);
-  servo2.writeMicroseconds(2000);
+  servo2.writeMicroseconds(1400);
 }
 
 void wheel::stop() {

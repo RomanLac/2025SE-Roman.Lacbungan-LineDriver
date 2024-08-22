@@ -1,6 +1,6 @@
 #include "lineSensor.h"
 
-lineSensor myLineSensor1(A5); // left
+lineSensor myLineSensor1(A0); // left
 lineSensor myLineSensor2(A1); // right
 
 void setup() {

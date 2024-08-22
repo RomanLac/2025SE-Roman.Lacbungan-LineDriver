@@ -11,5 +11,5 @@ void lineSensor::init() {
 // val should be an int
 bool lineSensor::isLineDetected() {
   int val = digitalRead(sensorPin);
-  return val == HIGH;
+  return val == LOW;
 }
