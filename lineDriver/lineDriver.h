@@ -1,21 +1,23 @@
 #ifndef LINEDRIVER_H
 #define LINEDRIVER_H
 
-#include "ledArray/ledArray.h"
-#include "lineSensor/lineSensor.h"
-#include "wheel/wheel.h"
+#include "driver.h"
+#include "ledArray.h"
+#include "lineSensor.h"
+#include "wheel.h"
 
-class lineDriver {
+class lineDriver : public driver {
 private:
-  ledArray myLedArray;
-  lineSensor myLineSensorLeft;
-  lineSensor myLineSensorRight;
-  wheel myWheel;
+  ledArray& myLedArray;
+  lineSensor& myLineSensorLeft;
+  lineSensor& myLineSensorRight;
+  wheel& myWheel;
 
 public:
-  lineDriver();
-  void init();
-  void run();
+  lineDriver(ledArray& ledArray, lineSensor& leftSensor, lineSensor& rightSensor, wheel& wheel);
+  void init() override;
+  void run() override;
+
 };
 
 #endif // LINEDRIVER_H

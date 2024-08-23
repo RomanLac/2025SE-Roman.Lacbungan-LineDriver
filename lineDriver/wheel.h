@@ -3,9 +3,9 @@
 
 #include <Servo.h>
 #include <Arduino.h>
-#include "motor.h" // example of inheritence
+#include "motorInterface.h"
 
-class wheel : public motor {
+class wheel : public motorInterface {
 public:
   wheel() {}
   wheel(int servoPin1, int servoPin2);

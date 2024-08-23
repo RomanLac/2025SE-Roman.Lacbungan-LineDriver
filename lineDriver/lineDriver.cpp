@@ -1,14 +1,10 @@
 #include "lineDriver.h"
 
-#define LINE_SENSOR_PIN1 A0 // left
-#define LINE_SENSOR_PIN2 A1 // right
-#define WHEEL_PIN1 9
-#define WHEEL_PIN2 5
-
-lineDriver::lineDriver()
-: myLineSensorLeft(LINE_SENSOR_PIN1),
-  myLineSensorRight(LINE_SENSOR_PIN2),
-  myWheel(WHEEL_PIN1, WHEEL_PIN2) {}
+lineDriver::lineDriver(ledArray& ledArray, lineSensor& leftSensor, lineSensor& rightSensor, wheel& wheel)
+  : myLedArray(ledArray),
+    myLineSensorLeft(leftSensor),
+    myLineSensorRight(rightSensor),
+    myWheel(wheel) {}
 
 void lineDriver::init() {
   pinMode(5, OUTPUT); // fixed
